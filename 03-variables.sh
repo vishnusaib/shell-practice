@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 PERSON1=Modi #there should be no space before and after =
 PERSON2=Musk
 
