@@ -8,4 +8,5 @@ TimeStamp=$(date)
 
 echo "This code is executed at $TimeStamp"
 
-#Sum = $((Number + Number2))
+Sum=$((Number+Number2))
+echo "The sum of $Number and $Number2 is $Sum"
