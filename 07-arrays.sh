@@ -8,3 +8,6 @@ echo "All movies in the array : ${Movies[@]}"
 # To print all elements in the array, use the @ symbol."
 
 echo "All movies in the array : ${Movies[$1]}"
+
+echo "All movies in the array : ${Movies[@]}/n"
+# To print all elements in the array with a new line, use the @ symbol and add /n at the end.
