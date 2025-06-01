@@ -4,7 +4,7 @@ echo "Enter a number: "
 read $num
 
 if [$num -lt 100];
-    then
+then
     echo "Entered number is less than 100"
 else
     echo "Entered number is greater than 100"
