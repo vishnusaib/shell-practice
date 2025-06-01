@@ -1,9 +1,9 @@
 #!/biin/bash
 
-for i in {1..10}
-do
-    echo $i
-done
+#for i in {1..10}
+#do
+#    echo $i
+#done
 
 #!/bin/bash
 
@@ -16,7 +16,7 @@ N="\e[0m"
 LOGS_FOLDER="/var/log/shell-script.logs"
 SCRIPT_NAME=$(echo $0 | cut -d '.' -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
-#PACKAGES=("mysql" "python3" "nginx" "httpd")
+PACKAGES=("mysql" "python3" "nginx" "httpd")
 
 mkdir -p $LOGS_FOLDER
 echo "Script Started executing at $(date)" | tee -a $LOG_FILE
