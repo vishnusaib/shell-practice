@@ -1,6 +1,6 @@
 #!/bin/bash
 # This script demonstrates the use of If conditional statements in bash.
-$num=$1
+num=$1
 echo "Entered number: $num"
 
 if [$num -lt 100];
