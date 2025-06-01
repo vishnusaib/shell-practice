@@ -3,7 +3,7 @@
 
 echo "Enter a number:"
 
-num=$1
+read num
 
 if [ $num -lt 100 ];
 then
