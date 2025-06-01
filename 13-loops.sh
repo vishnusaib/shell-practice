@@ -29,35 +29,36 @@ VALIDATE(){
     else
         echo -e "$R Installion $2 is Failure" | tee -a $LOG_FILE
         exit 1
+    fi
 }
 
 dnf list installed mysql &>> $LOG_FILE
 if [ $? -ne 0 ]
 then
-    echo -e "$Y mysql is not installed going to install it" | tee -a $LOG_FILE
+    echo -e "$Y mysql is not installed going to install it $N" | tee -a $LOG_FILE
     dnf install mysql -y &>> $LOG_FILE
     VALIDATE $? "mysql"
 else
-    echo -e "$G mysql is already installed nothing to do" | tee -a $LOG_FILE
+    echo -e "$G mysql is already installed nothing to do $N" | tee -a $LOG_FILE
 fi
 
 dnf list installed python3 &>> $LOG_FILE
 if [ $? -ne 0 ]
 then
-    echo -e "$Y mysql is not installed going to install it" | tee -a $LOG_FILE
+    echo -e "$Y mysql is not installed going to install it $N" | tee -a $LOG_FILE
     dnf install python3 -y &>> $LOG_FILE
     VALIDATE $? "python3"
 else
-    echo -e "$G python3 is already installed nothing to do" | tee -a $LOG_FILE
+    echo -e "$G python3 is already installed nothing to do $N" | tee -a $LOG_FILE
 fi
 
 dnf list installed nginx &>> $LOG_FILE
 if [ $? -ne 0 ]
 then
-    echo -e "$Y nginx is not installed going to install it" | tee -a $LOG_FILE
+    echo -e "$Y nginx is not installed going to install it $N" | tee -a $LOG_FILE
     dnf install nginx -y &>> $LOG_FILE
     VALIDATE $? "nginx"
 else
-    echo -e "$G nginx is already installed nothing to do" | tee -a $LOG_FILE
+    echo -e "$G nginx is already installed nothing to do $N" | tee -a $LOG_FILE
 fi
 
