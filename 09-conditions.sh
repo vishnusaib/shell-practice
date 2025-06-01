@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script demonstrates the use of If conditional statements in bash.
 echo "Enter a number: "
-read $num
+$num =$1
 
 if [$num -lt 100];
 then
