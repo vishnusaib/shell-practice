@@ -7,4 +7,4 @@ echo "Movies in the array:${Movies[0]}"
 echo "All movies in the array : ${Movies[@]}"
 # To print all elements in the array, use the @ symbol."
 
-echo "All movies in the array : ${Movies[3]}"
+echo "All movies in the array : ${Movies[$1]}"
