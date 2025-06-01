@@ -1,0 +1,63 @@
+#!/bin/bash
+
+userid=$(id -u)
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
+LOGS_FOLDER="/var/log/shell-script.logs"
+SCRIPT_NAME=$(echo $0 | cut -d '.' -f1)
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
+PACKAGES=("mysql" "python3" "nginx")
+
+mkdir -p $LOGS_FOLDER
+echo "Script Started executing at $(date)" | tee -a $LOG_FILE
+
+if [ $userid -ne 0 ]
+then
+    echo -e "$R ERROR: Please run this script with root access $N" | tee -a $LOG_FILE
+    exit 1
+else
+    echo -e "$G you are running with root access $N" | tee -a $LOG_FILE
+fi
+# validate functions takes input as exit status, what command they tried to install
+VALIDATE(){
+    if [ $1 -eq 0 ]
+    then
+        echo -e "$G Installing $2 is Success" | tee -a $LOG_FILE
+    else
+        echo -e "$R Installion $2 is Failure" | tee -a $LOG_FILE
+        exit 1
+}
+
+dnf list installed mysql &>> $LOG_FILE
+if [ $? -ne 0 ]
+then
+    echo -e "$Y mysql is not installed going to install it" | tee -a $LOG_FILE
+    dnf install mysql -y &>> $LOG_FILE
+    VALIDATE $? "mysql"
+else
+    echo -e "$G mysql is already installed nothing to do" | tee -a $LOG_FILE
+fi
+
+dnf list installed python3 &>> $LOG_FILE
+if [ $? -ne 0 ]
+then
+    echo -e "$Y mysql is not installed going to install it" | tee -a $LOG_FILE
+    dnf install python3 -y &>> $LOG_FILE
+    VALIDATE $? "python3"
+else
+    echo -e "$G python3 is already installed nothing to do" | tee -a $LOG_FILE
+fi
+
+dnf list installed nginx &>> $LOG_FILE
+if [ $? -ne 0 ]
+then
+    echo -e "$Y nginx is not installed going to install it" | tee -a $LOG_FILE
+    dnf install nginx -y &>> $LOG_FILE
+    VALIDATE $? "nginx"
+else
+    echo -e "$G nginx is already installed nothing to do" | tee -a $LOG_FILE
+fi
+
