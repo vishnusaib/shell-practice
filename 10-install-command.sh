@@ -9,4 +9,12 @@ else
     echo "you can run the script"
 fi
 
-dnf install mysql -y
+dnf install mysqlsdfgag -y
+
+if [ $? -eq 0 ]
+then
+    echo "Installing Mysql is successs"
+else
+    echo "Intalling mysql is failed"
+    exit 1
+fi
