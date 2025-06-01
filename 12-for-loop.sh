@@ -39,6 +39,7 @@ VALIDATE(){
     fi
 }
 
+# for package in $@ -- we can give any specify package in cmd to installed 
 for package in ${PACKAGES[@]}
 do
     dnf list installed $package &>>LOG_FILE
