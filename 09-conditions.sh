@@ -3,7 +3,7 @@
 num=$1
 echo "Entered number: $num"
 
-if [$num -lt 100];
+if [ $num -lt 100 ];
 then
     echo "Entered number is less than 100"
 else
