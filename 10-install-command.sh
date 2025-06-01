@@ -9,7 +9,7 @@ else
     echo "you can run the script"
 fi
 
-dnf install mysqlsdfgag -y
+dnf install mysql -y
 
 if [ $? -eq 0 ]
 then
