@@ -6,4 +6,7 @@ echo "$GREETINGS"
 
 echo "PID of Script-1: $$"
 
-./Script-2.sh
+# ./script-2.sh
+# this command needs chmod +x .script-2.sh permission
+
+source ./script-2.sh
