@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "The name of the script is: $0"
+echo "All the variables: $@"
 
 echo "number of variables passed: $#"
 echo "script name: $0"
