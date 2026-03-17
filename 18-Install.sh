@@ -8,7 +8,7 @@ then
     echo "your're not root user"
 else
     echo "Hi Root User"
-    exit 1
+    exit 0
 fi
 
 dnf install mysql -y
