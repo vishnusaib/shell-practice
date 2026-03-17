@@ -14,7 +14,7 @@ fi
 dnf list installed mysql
 #to get the exit status of previous cmd $?
 
-if [$? -eq 1]
+if [ $? -eq 1 ]
 then
     echo "Installing MySQL"
     
