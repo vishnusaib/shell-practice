@@ -3,12 +3,12 @@
 # you run this file as sudo before running in shell 
 userid=$(id -u)
 
-if [ $userid -eq 1001 ]
+if [ $userid -ne 0 ]
 then
     echo "your're not root user"
-    exit 1
 else
     echo "Hi Root User"
+    exit 1
 fi
 
 dnf install mysql -y
