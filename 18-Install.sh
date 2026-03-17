@@ -14,18 +14,16 @@ fi
 dnf list installed mysql
 #to get the exit status of previous cmd $?
 
-if [ $? -eq 1 ]
+if [ $? -ne 0 ]
 then
     echo "Installing MySQL"
-    
     dnf install mysql -y
-
-    if [ $? -eq 0 ]
+    if [ $? -eq 1 ]
     then
         echo "Installing Mysql is successs"
+        exit 1
     else
         echo "Intalling mysql is failed"
-        exit 1
     fi
 else
     echo "MySQL is already Installed"
