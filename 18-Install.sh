@@ -6,9 +6,9 @@ userid=$(id -u)
 if [ $userid -ne 0 ]
 then
     echo "your're not root user"
+    exit 1
 else
     echo "Hi Root User"
-    exit 0
 fi
 
 dnf install mysql -y
