@@ -2,6 +2,7 @@
 
 PERSON1=$1 #there should be no space before and after =
 PERSON2=$2
+# here inputs will be provided in cmd line input
 
 echo "$PERSON1:: Hey $PERSON2, How are you?"
 echo "$PERSON2:: Hello $PERSON1, I am fine. How are you doing"
