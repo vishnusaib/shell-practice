@@ -3,9 +3,9 @@
 # you run this file as sudo before running in shell 
 userid=$(id -u)
 
-if [ $userid -ne 0 ]
+if [ $userid -ne 1 ]
 then
-    echo "your not root user"
+    echo "your're root user"
     exit 1
 else
     echo "Hi Root User"
