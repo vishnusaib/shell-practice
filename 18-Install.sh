@@ -12,3 +12,13 @@ else
 fi
 
 dnf install mysql -y
+
+#to get the exit status of previous cmd $?
+
+if [ $? -eq 0 ]
+then
+    echo "My SQL is installing"
+else
+    echo "My SQl is not installing"
+    exit 1
+fi
