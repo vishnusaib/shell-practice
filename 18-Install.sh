@@ -7,3 +7,4 @@ then
     echo "your not root user"
 else
     echo "Hi Root User"
+fi
