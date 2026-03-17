@@ -2,7 +2,7 @@
 
 userid=$(id -u)
 
-if [$userid -ne 0]
+if [ $userid -ne 0 ]
 then
     echo "your not root user"
 else
