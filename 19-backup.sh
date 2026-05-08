@@ -64,7 +64,7 @@ if [ ! -z $FILES ]
 then
     echo "Files to ZIP: $FILES"
     TIMESTAMP=$(date +%F-%H-%M-%S)
-    ZIP_FILE="$DEST_DIR/TIMESTAMP.zip"
+    ZIP_FILE="$DEST_DIR/app-logs-TIMESTAMP.zip"
     find $SOURCE_DIR -name "*.log" -mtime +14 | zip @ "$ZIP_FILE"
     
     if [ -f $ZIP_FILE ]
@@ -78,7 +78,8 @@ then
         done <<< $FILES
     
     else
-        echo "Zip Files is not Created"
+        echo -e "Zip Files is Creation $R FAILURE $N"
+        exit 1
 else
     echo "No Files to ZIP"
 fi
