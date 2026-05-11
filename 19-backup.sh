@@ -57,6 +57,7 @@ fi
 
 # Checking the Files more than 14 days
 
+dnf install zip -y
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
